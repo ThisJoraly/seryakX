@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="my-audio" autoplay>
+    <source src="n.mp3" type="audio/mpeg">
+    ЗАЧЕМ УДАЛИЛ(
+</audio>
+<div class="container">
+    <h1 class="my-4">BA$$B00ST3D 2</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTrackModal">
+        Add Track
+    </button>
+    <div id="track-list" class="mt-4"></div>
+</div>
+<div>
+</div>
+
+<!-- Add Track Modal -->
+<div class="modal fade" id="addTrackModal" tabindex="-1" role="dialog" aria-labelledby="addTrackModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="add-track-form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTrackModalLabel">Add New Track</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="track-title">Track Title</label>
+                        <input type="text" class="form-control" id="track-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="track-artist">Artist</label>
+                        <input type="text" class="form-control" id="track-artist" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="track-duration">Duration (seconds)</label>
+                        <input type="number" class="form-control" id="track-duration" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Track</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editTrackModal" tabindex="-1" role="dialog" aria-labelledby="editTrackModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="edit-track-form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTrackModalLabel">Edit Track</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-track-title">Track Title</label>
+                        <input type="text" class="form-control" id="edit-track-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-track-artist">Artist</label>
+                        <input type="text" class="form-control" id="edit-track-artist" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-track-duration">Duration (seconds)</label>
+                        <input type="number" class="form-control" id="edit-track-duration" required>
+                    </div>
+                    <input type="hidden" id="edit-track-id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ЗАКРЫТЬ БА$$(((</button>
+                    <button type="submit" class="btn btn-primary">НАВАЛИТЬ!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

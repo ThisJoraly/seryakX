@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+button {
+    margin: 10px;
+    width: 100px;
+}
+.my-4 {
+    text-align: center;
+}
