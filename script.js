@@ -53,6 +53,50 @@ function renderTracks() {
     const editBtns = document.querySelectorAll(".edit-btn");
     const deleteBtns = document.querySelectorAll(".delete-btn");
 
+    editBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const id = e.target.dataset.id;
+            const track = tracks.find((track) => track.id == id);
+            if (track) {
+                document.getElementById("edit-track-title").value = track.title;
+                document.getElementById("edit-track-artist").value = track.artist;
+                document.getElementById("edit-track-duration").value = track.duration;
+                document.getElementById("edit-track-id").value = track.id;
+                $("#editTrackModal").modal("show");
+            }
+        });
+    });
+
+    editTrackForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const id = document.getElementById("edit-track-id").value;
+        const title = document.getElementById("edit-track-title").value;
+        const artist = document.getElementById("edit-track-artist").value;
+        const duration = parseInt(document.getElementById("edit-track-duration").value);
+
+        if (id && title && artist && !isNaN(duration)) {
+            const trackIndex = tracks.findIndex((track) => track.id == id);
+            if (trackIndex !== -1) {
+                tracks[trackIndex].title = title;
+                tracks[trackIndex].artist = artist;
+                tracks[trackIndex].duration = duration;
+                renderTracks();
+                $("#editTrackModal").modal("hide");
+            }
+        }
+    });
+
+// Delete functionality
+    deleteBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const id = e.target.dataset.id;
+            const trackIndex = tracks.findIndex((track) => track.id == id);
+            if (trackIndex !== -1) {
+                tracks.splice(trackIndex, 1);
+                renderTracks();
+            }
+        });
+    });
     // TODO edit delete сделать нада
 }
 
