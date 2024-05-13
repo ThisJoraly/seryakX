@@ -86,7 +86,7 @@ function renderTracks() {
         }
     });
 
-// Delete functionality
+
     deleteBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             const id = e.target.dataset.id;
@@ -97,7 +97,7 @@ function renderTracks() {
             }
         });
     });
-    // TODO edit delete сделать нада
+
 }
 
 renderTracks();
